@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: matrix-config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/MentalKali/MatrixBlog
+          search-paths: Matrix-Config-Folder
+          username: MentalKali
+          password: jasonFX3A87WLQ
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jason-dell:10010/eureka/,http://jason-dell:10011/eureka/
+
+server:
+  port: 10022

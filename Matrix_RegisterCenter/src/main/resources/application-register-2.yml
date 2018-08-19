@@ -1,0 +1,16 @@
+server:
+  port: 10011
+
+eureka:
+  instance:
+    hostname: register-2
+#    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://register-1:10010/eureka/
+
+spring:
+  application:
+    name: matrix-register-center

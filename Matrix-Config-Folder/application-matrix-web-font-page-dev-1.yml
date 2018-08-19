@@ -1,0 +1,10 @@
+spring: 
+  application:
+    name: matrix-web-font-page
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+
+server:
+  port: 10040
