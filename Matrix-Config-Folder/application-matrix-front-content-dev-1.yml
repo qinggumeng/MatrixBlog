@@ -1,0 +1,6 @@
+spring: 
+  application:
+    name: matrix-front-content
+
+server:
+  port: 10050

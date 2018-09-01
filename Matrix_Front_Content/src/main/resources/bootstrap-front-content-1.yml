@@ -1,0 +1,13 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jason-dell:10010/eureka/,http://jason-dell:10011/eureka/
+
+spring:
+  cloud:
+    config:
+      label: master
+      profile: matrix-front-content-dev-1
+      discovery:
+        serviceId: matrix-config-server
+        enabled: true
