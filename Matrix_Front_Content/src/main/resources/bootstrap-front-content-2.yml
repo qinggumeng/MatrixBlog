@@ -7,7 +7,7 @@ spring:
   cloud:
     config:
       label: master
-      profile: matrix-front-content-2
+      profile: matrix-front-content-dev-2
       discovery:
         serviceId: matrix-config-server
         enabled: true

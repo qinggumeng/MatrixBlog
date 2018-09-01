@@ -1,6 +1,4 @@
-spring: 
-  application:
-    name: matrix-front-content
+spring:
   datasource:
     url: jdbc:mysql://120.78.208.3:3306/matrix
     driver-class-name: com.mysql.jdbc.Driver
@@ -10,6 +8,3 @@ spring:
 mybatis:
   mapper-locations: classpath:com.matrix.mapper/*Mapper.xml
   type-aliases-package: com.matrix.pojo
-
-server:
-  port: 10051
