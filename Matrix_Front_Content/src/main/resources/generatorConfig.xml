@@ -29,8 +29,8 @@
 		</javaModelGenerator>
 
 		<!--生成映射文件存放位置 -->
-		<sqlMapGenerator targetPackage="com.matrix.mapper"
-			targetProject="Matrix_Front_Content/src/main/java">
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="Matrix_Front_Content/src/main/resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
