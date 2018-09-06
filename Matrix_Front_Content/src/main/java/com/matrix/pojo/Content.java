@@ -1,33 +1,50 @@
 package com.matrix.pojo;
 
 import java.util.Date;
-/**
- * 文章实体类
- * @author JasonFu
- * @createTime 2018年9月6日 下午2:00:17
- */
+
 public class Content {
     private Long id;
+
     private String title;
+
     private String content;
+
     private String summary;
+
     private Integer codingtype;
+
     private String linkto;
+
     private String thumbnail;
+
     private Long authorid;
+
     private String authorip;
+
     private String writername;
+
     private String writeremail;
+
     private Integer orderflag;
+
     private Integer status;
+
     private Integer voteup;
+
     private Integer votedown;
+
     private Integer commentvalve;
+
     private Integer viewcount;
+
     private Date createtime;
+
     private Date modifitime;
+
     private String metakeywords;
+
     private String metadescription;
+
     private String remarks;
 
     public Long getId() {

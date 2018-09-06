@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 	<context id="myBatis3" targetRuntime="MyBatis3">
-		<property name="mergeable" value="false" />
+		<property name="mergeable" value="true" />
 		<property name="javaFileEncoding" value="UTF-8" />
 
 		<commentGenerator>
@@ -42,7 +42,7 @@
 
 		<!--生成对应表及类名 -->
 		<table tableName="content" domainObjectName="Content"
-			enableCountByExample="false" enableUpdateByExample="false"
+			enableCountByExample="true" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="true"
 			enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true"
 			enableUpdateByPrimaryKey="true" selectByExampleQueryId="false" 

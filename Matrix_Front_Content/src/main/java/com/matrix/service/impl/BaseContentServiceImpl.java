@@ -22,20 +22,17 @@ public class BaseContentServiceImpl implements ContentService {
 
 	@Override
 	public Content findOne(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByPrimaryKey(Long.valueOf(id));
 	}
 
 	@Override
 	public List<Content> search(ContentExample criteria) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByExample(criteria);
 	}
 
 	@Override
 	public List<Content> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByExample(new ContentExample());
 	}
 
 	@Override
@@ -46,50 +43,56 @@ public class BaseContentServiceImpl implements ContentService {
 
 	@Override
 	public Content save(Content entity) {
-		// TODO Auto-generated method stub
-		return null;
+		mapper.insertSelective(entity);
+		return entity;
 	}
 
 	@Override
 	public List<Content> save(List<Content> entities) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Content content : entities) {
+			mapper.insertSelective(content);
+		}
+		return entities;
 	}
 
 	@Override
 	public Content update(Content entity) {
-		// TODO Auto-generated method stub
-		return null;
+		mapper.updateByPrimaryKeySelective(entity);
+		return entity;
 	}
 
 	@Override
 	public List<Content> update(List<Content> entities) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Content content : entities) {
+			mapper.updateByPrimaryKeySelective(content);
+		}
+		return entities;
 	}
 
 	@Override
 	public void delete(String id) {
-		// TODO Auto-generated method stub
-		
+		mapper.deleteByPrimaryKey(Long.valueOf(id));
 	}
 
 	@Override
 	public boolean exists(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		ContentExample ctExp = new ContentExample();
+		ctExp.createCriteria().andIdEqualTo(Long.valueOf(id));
+		Content content = mapper.selectByPrimaryKey(Long.valueOf(id));
+		if (content == null)
+			return false;
+		else
+			return true;
 	}
 
 	@Override
 	public long count() {
-		// TODO Auto-generated method stub
-		return 0;
+		return mapper.countByExample(new ContentExample());
 	}
 
 	@Override
 	public long countByCondition(ContentExample e) {
-		// TODO Auto-generated method stub
-		return 0;
+		return mapper.countByExample(e);
 	}
 
 }

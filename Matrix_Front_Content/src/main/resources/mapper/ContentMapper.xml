@@ -241,6 +241,12 @@
       </if>
     </trim>
   </insert>
+  <select id="countByExample" parameterType="com.matrix.pojo.ContentExample" resultType="java.lang.Long">
+    select count(*) from content
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
   <update id="updateByPrimaryKeySelective" parameterType="com.matrix.pojo.Content">
     update content
     <set>

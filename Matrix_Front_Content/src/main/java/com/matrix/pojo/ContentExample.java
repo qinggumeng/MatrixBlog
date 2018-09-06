@@ -3,11 +3,7 @@ package com.matrix.pojo;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-/**
- * 文章实体sql操作类
- * @author JasonFu
- * @createTime 2018年9月6日 下午2:00:58
- */
+
 public class ContentExample {
     protected String orderByClause;
 
