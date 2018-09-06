@@ -2,7 +2,7 @@ spring:
   application:
     name: matrix-front-content
   datasource:
-    url: jdbc:mysql://120.78.208.3:3306/matrix
+    url: jdbc:mysql://120.78.208.3:3306/matrix?useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: jasonFX3A87WLQ
