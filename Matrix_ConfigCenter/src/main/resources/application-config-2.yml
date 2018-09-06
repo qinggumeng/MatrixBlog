@@ -7,7 +7,7 @@ spring:
       server:
         git:
           uri: https://github.com/MentalKali/MatrixBlog
-          search-paths: Matrix_Config_Floder/src
+          search-paths: /**
           username: MentalKali
           password: jasonFX3A87WLQ
 
