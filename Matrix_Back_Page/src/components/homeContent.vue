@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>系统管理</el-breadcrumb-item>
-      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-      <el-breadcrumb-item>添加用户</el-breadcrumb-item>
-    </el-breadcrumb>
-    <router-view></router-view>
+  <div id="homeContent">
+    <div id="top">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div id="bottom">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -17,7 +18,22 @@
 </script>
 
 <style scoped>
+  #homeContent {
+    height: 100%;
+    padding: 50px 0 0;
+    box-sizing: border-box;
+  }
+
+  #top {
+    height: 50px;
+    margin: -50px 0 0;
+  }
+
+  #bottom {
+    height: 100%;
+  }
+
   .el-breadcrumb {
-    padding-bottom: 10px;
+    padding: 15px;
   }
 </style>

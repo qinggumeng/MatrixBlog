@@ -14,8 +14,8 @@
         <el-submenu index="3">
           <template slot="title"><i class="el-icon-service"></i>用户管理</template>
           <el-menu-item index="3-1">新增用户</el-menu-item>
-          <el-menu-item index="3-2">角色管理</el-menu-item>
-          <el-menu-item index="3-3">用户管理</el-menu-item>
+          <el-menu-item index="3-2">角色维护</el-menu-item>
+          <el-menu-item index="3-3" v-on:click="toAccountManager">用户维护</el-menu-item>
         </el-submenu>
         <el-submenu index="4">
           <template slot="title"><i class="el-icon-setting"></i>系统管理</template>
@@ -29,7 +29,12 @@
 
 <script>
     export default {
-        name: "homeAside"
+      name: "homeAside",
+      methods: {
+        toAccountManager: function () {
+          this.$router.push({path:'/system/account'})
+        }
+      }
     }
 </script>
 
