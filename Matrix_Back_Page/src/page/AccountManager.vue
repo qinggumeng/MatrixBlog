@@ -65,9 +65,9 @@
         }
       },
       loadAccountData: function () {
-        this.$http.get('http://localhost:8088/test').then(response => {
-          console.log(response.data);
-        });
+        // this.$http.get('http://localhost:8088/').then(response => {
+        //   console.log(response.data);
+        // });
       }
     }
   }

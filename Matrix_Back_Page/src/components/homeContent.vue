@@ -13,7 +13,12 @@
 
 <script>
   export default {
-    name: "homeContent"
+    name: "homeContent",
+    methods: {
+      changeMenu: function (menus) {
+        console.log(menus)
+      }
+    }
   }
 </script>
 

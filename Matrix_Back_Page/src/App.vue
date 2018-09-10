@@ -26,6 +26,17 @@ import MainContent from  './components/homeContent'
 import MainAside from './components/homeAside'
 export default {
   name: 'App',
+  data () {
+    return {
+      navMenu: []
+    }
+  },
+  watch: {
+    navMenu: function (newMenu, oldMenu) {
+      console.log("change menu");
+      this.mainContent.changeMenu(newMenu)
+    }
+  },
   components: {
     mainHeader: MainHeader,
     mainFooter: MainFooter,

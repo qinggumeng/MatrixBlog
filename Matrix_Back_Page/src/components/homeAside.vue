@@ -32,6 +32,7 @@
       name: "homeAside",
       methods: {
         toAccountManager: function () {
+          this.$parent.navMenu = ["用户管理","用户维护"];
           this.$router.push({path:'/system/account'})
         }
       }
