@@ -40,7 +40,7 @@
 
 <style scoped>
   ul {
-    border: 0px;
+    border: 0;
   }
 
   i {

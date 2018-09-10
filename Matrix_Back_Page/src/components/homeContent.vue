@@ -20,13 +20,13 @@
 <style scoped>
   #homeContent {
     height: 100%;
-    padding: 50px 0 0;
+    padding: 40px 0 0;
     box-sizing: border-box;
   }
 
   #top {
-    height: 50px;
-    margin: -50px 0 0;
+    height: 40px;
+    margin: -40px 0 0;
   }
 
   #bottom {

@@ -51,42 +51,11 @@
     name: "AccountManager",
     data() {
       return {
-        tableData: [{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        },{
-          username: 'JasonFu'
-        }]
+        tableData: []
       }
+    },
+    mounted: function () {
+      this.loadAccountData()
     },
     methods: {
       handlerStyle: function () {
@@ -94,6 +63,11 @@
           'line-height': '25px',
           'text-align': 'center'
         }
+      },
+      loadAccountData: function () {
+        this.$http.get('http://localhost:8088/test').then(response => {
+          console.log(response.data);
+        });
       }
     }
   }
