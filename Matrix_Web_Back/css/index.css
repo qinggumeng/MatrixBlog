@@ -1,0 +1,9 @@
+.layui-footer {
+    text-align: center;
+}
+
+#main_body {
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+}
