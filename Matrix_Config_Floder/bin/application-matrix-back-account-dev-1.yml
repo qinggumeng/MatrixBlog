@@ -1,0 +1,30 @@
+spring: 
+  application:
+    name: matrix-back-account
+  datasource:
+    url: jdbc:mysql://120.78.208.3:3306/matrix?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: jasonFX3A87WLQ
+    
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 0
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.matrix.pojo
+
+server:
+  port: 10060
