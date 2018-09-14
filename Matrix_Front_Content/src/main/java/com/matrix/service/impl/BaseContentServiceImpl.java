@@ -15,7 +15,7 @@ import com.matrix.service.ContentService;
  * @author JasonFu
  * @createTime 2018年9月6日 下午2:03:05
  */
-public class BaseContentServiceImpl implements ContentService {
+public abstract class BaseContentServiceImpl implements ContentService {
 	
 	@Autowired
 	private ContentMapper mapper;
@@ -76,8 +76,6 @@ public class BaseContentServiceImpl implements ContentService {
 
 	@Override
 	public boolean exists(String id) {
-		ContentExample ctExp = new ContentExample();
-		ctExp.createCriteria().andIdEqualTo(Long.valueOf(id));
 		Content content = mapper.selectByPrimaryKey(Long.valueOf(id));
 		if (content == null)
 			return false;

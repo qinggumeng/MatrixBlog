@@ -56,7 +56,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, title, content, summary, codingtype, linkto, thumbnail, authorid, authorip, writername, 
-    writeremail, orderflag, status, voteup, votedown, commentvalve, viewcount, createtime, 
+    writeremail, orderflag, `status`, voteup, votedown, commentvalve, viewcount, createtime, 
     modifitime, metakeywords, metadescription, remarks
   </sql>
   <select id="selectByExample" parameterType="com.matrix.pojo.ContentExample" resultMap="BaseResultMap">
@@ -89,7 +89,7 @@
       summary, codingtype, linkto, 
       thumbnail, authorid, authorip, 
       writername, writeremail, orderflag, 
-      status, voteup, votedown, 
+      `status`, voteup, votedown, 
       commentvalve, viewcount, createtime, 
       modifitime, metakeywords, metadescription, 
       remarks)
@@ -142,7 +142,7 @@
         orderflag,
       </if>
       <if test="status != null">
-        status,
+        `status`,
       </if>
       <if test="voteup != null">
         voteup,
@@ -284,7 +284,7 @@
         orderflag = #{orderflag,jdbcType=INTEGER},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
+        `status` = #{status,jdbcType=INTEGER},
       </if>
       <if test="voteup != null">
         voteup = #{voteup,jdbcType=INTEGER},
@@ -329,7 +329,7 @@
       writername = #{writername,jdbcType=VARCHAR},
       writeremail = #{writeremail,jdbcType=VARCHAR},
       orderflag = #{orderflag,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
       voteup = #{voteup,jdbcType=INTEGER},
       votedown = #{votedown,jdbcType=INTEGER},
       commentvalve = #{commentvalve,jdbcType=INTEGER},

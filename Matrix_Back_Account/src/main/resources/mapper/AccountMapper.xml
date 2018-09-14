@@ -62,9 +62,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, nickname, realname, password, email, mobile, gender, roleid, signature, 
+    id, username, nickname, realname, `password`, email, mobile, gender, roleid, signature, 
     qq, wechat, weibo, facebook, linkedin, birthday, company, occupation, address, zipcode, 
-    graduateschool, education, avatar, idcardtype, idcard, status, createtime, from, 
+    graduateschool, education, avatar, idcardtype, idcard, `status`, createtime, `from`, 
     logged
   </sql>
   <select id="selectByExample" parameterType="com.matrix.pojo.AccountExample" resultMap="BaseResultMap">
@@ -94,15 +94,15 @@
   </delete>
   <insert id="insert" parameterType="com.matrix.pojo.Account">
     insert into account (id, username, nickname, 
-      realname, password, email, 
+      realname, `password`, email, 
       mobile, gender, roleid, 
       signature, qq, wechat, 
       weibo, facebook, linkedin, 
       birthday, company, occupation, 
       address, zipcode, graduateschool, 
       education, avatar, idcardtype, 
-      idcard, status, createtime, 
-      from, logged)
+      idcard, `status`, createtime, 
+      `from`, logged)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{realname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{mobile,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, #{roleid,jdbcType=BIGINT}, 
@@ -130,7 +130,7 @@
         realname,
       </if>
       <if test="password != null">
-        password,
+        `password`,
       </if>
       <if test="email != null">
         email,
@@ -193,13 +193,13 @@
         idcard,
       </if>
       <if test="status != null">
-        status,
+        `status`,
       </if>
       <if test="createtime != null">
         createtime,
       </if>
       <if test="from != null">
-        from,
+        `from`,
       </if>
       <if test="logged != null">
         logged,
@@ -314,7 +314,7 @@
         realname = #{realname,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+        `password` = #{password,jdbcType=VARCHAR},
       </if>
       <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
@@ -377,13 +377,13 @@
         idcard = #{idcard,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
+        `status` = #{status,jdbcType=INTEGER},
       </if>
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
       </if>
       <if test="from != null">
-        from = #{from,jdbcType=VARCHAR},
+        `from` = #{from,jdbcType=VARCHAR},
       </if>
       <if test="logged != null">
         logged = #{logged,jdbcType=TIMESTAMP},
@@ -396,7 +396,7 @@
     set username = #{username,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
       realname = #{realname,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=INTEGER},
@@ -417,9 +417,9 @@
       avatar = #{avatar,jdbcType=VARCHAR},
       idcardtype = #{idcardtype,jdbcType=INTEGER},
       idcard = #{idcard,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP},
-      from = #{from,jdbcType=VARCHAR},
+      `from` = #{from,jdbcType=VARCHAR},
       logged = #{logged,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>

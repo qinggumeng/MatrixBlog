@@ -6,6 +6,9 @@
 	<context id="myBatis3" targetRuntime="MyBatis3">
 		<property name="mergeable" value="true" />
 		<property name="javaFileEncoding" value="UTF-8" />
+		<property name="autoDelimitKeywords" value="true" />
+		<property name="beginningDelimiter" value="`"/>
+    	<property name="endingDelimiter" value="`"/>
 
 		<commentGenerator>
 			<property name="suppressDate" value="true" />

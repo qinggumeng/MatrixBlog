@@ -19,22 +19,28 @@
             </a>
         </span>
     </div>
-    <table class="layui-table" lay-data="{height:100%, url:'/ssd/sda', page:true, id:'test'}" lay-filter="test">
-        <thead>
-            <tr>
-                <th lay-data="{field:'id', width:80, sort: true}">ID</th>
-                <th lay-data="{field:'username', width:80}">用户名</th>
-                <th lay-data="{field:'sex', width:80, sort: true}">性别</th>
-                <th lay-data="{field:'city'}">城市</th>
-                <th lay-data="{field:'sign'}">签名</th>
-                <th lay-data="{field:'experience', sort: true}">积分</th>
-                <th lay-data="{field:'score', sort: true}">评分</th>
-                <th lay-data="{field:'classify'}">职业</th>
-                <th lay-data="{field:'wealth', sort: true}">财富</th>
-            </tr>
-        </thead>
-    </table>
-    <script src="js/layui.js"></script>
+    <table id="data-table" class="layui-table" lay-filter="test"></table>
+    <script src="layui.js"></script>
+    <script>
+        layui.use('table', function () {
+            var table = layui.table;
+            table.render({
+                elem: '#data-table'
+                , height: '100%'
+                , url: 'localhost:10060/back/account/getPageByExample'
+                , page: true
+                , request: {
+                    pageName: 'page'
+                    , limitName: 'rows'
+                }
+                , cols: [[
+                    { field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left' }
+                    , { field: 'username', title: '用户名', width: 80 }
+                ]]
+            });
+
+        });
+    </script>
 </body>
 
 </html>

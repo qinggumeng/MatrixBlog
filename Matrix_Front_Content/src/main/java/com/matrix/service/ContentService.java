@@ -8,5 +8,4 @@ import com.matrix.pojo.ContentExample;
  * @createTime 2018年9月6日 下午2:02:22
  */
 public interface ContentService extends BaseService<Content, ContentExample> {
-
 }
