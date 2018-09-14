@@ -1,6 +1,24 @@
+/**
+ * 初始化LayUi
+ */
+var element;
+layui.use('element', function () {
+    element = layui.element;
+});
+/**
+ * 页面加载执行
+ */
 $(function () {
     refreshNowTime();
+    setStyle();
 });
+/**
+ * 动态设置样式
+ */
+function setStyle(){
+    var maxIframeHeight = $("#layui-body").height() - 10;
+    $("#main_body").attr("height", maxIframeHeight);
+}
 /**
  * 刷新右上角实时日期时间
  */
@@ -26,8 +44,6 @@ function padDate(pad) {
 
 function toAccountManager() {
     $("#main_body").attr("src","accountManager.html");
+    $("#nav-breadcrumb").html("<a href=''>首页</a><a href=''>用户管理</a><a><cite>用户维护</cite></a>");
+    element.render('breadcrumb', 'main-breadcrumb');
 }
-
-layui.use('element', function () {
-    var element = layui.element;
-});

@@ -2,8 +2,17 @@
     text-align: center;
 }
 
+.layui-body {
+    margin-top: 4px;
+    overflow-y: hidden;
+}
+
 #main_body {
     margin: 0px;
     padding: 0px;
-    z-index: 1;
+}
+
+.layui-breadcrumb {
+    font-size: 16px;
+    margin-left: 20px;
 }
