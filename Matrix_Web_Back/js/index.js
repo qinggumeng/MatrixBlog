@@ -41,7 +41,10 @@ function padDate(pad) {
     }
     return pad;
 }
-
+/**
+ * 跳转到用户维护界面
+ * 设置iframe路径并更改面包屑导航
+ */
 function toAccountManager() {
     $("#main_body").attr("src","accountManager.html");
     $("#nav-breadcrumb").html("<a href=''>首页</a><a href=''>用户管理</a><a><cite>用户维护</cite></a>");

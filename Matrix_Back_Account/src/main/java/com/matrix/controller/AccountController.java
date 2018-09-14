@@ -35,6 +35,7 @@ public class AccountController extends BaseController {
 			@RequestParam(required=true, name="rows") Integer rows) {
 		AccountExample acEmp = new AccountExample();
 		List<Account> list = accountService.findPageByConditon(acEmp, page, rows);
-		return getReturnDataJson(0, "success", list);
+		Integer count = (int) accountService.countByCondition(acEmp);
+		return getReturnDataJson(0, "success", count, list);
 	}
 }

@@ -15,17 +15,18 @@ public class BaseController {
 	/**
 	 * 返回Table数据Json字符串
 	 * @author JasonFu
-	 * @createTime 2018年9月14日 下午12:24:11
+	 * @createTime 2018年9月14日 下午4:33:20
 	 * @param code
 	 * @param msg
+	 * @param count
 	 * @param list
 	 * @return
 	 */
-	public String getReturnDataJson(Integer code, String msg, List list) {
+	public String getReturnDataJson(Integer code, String msg, Integer count, List list) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("code", code);
 		result.put("msg", msg);
-		result.put("count", list.size());
+		result.put("count", count);
 		result.put("data", list);
 		return JSON.toJSONString(result);
 	}
