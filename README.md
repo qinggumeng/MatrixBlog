@@ -12,7 +12,7 @@
 
 - 使用RabbitMQ做消息队列，服务间通讯
 
-- 使用Vue.js + ElementUI做后台管理系统前端架构（Vue较为麻烦，暂使用H-ui做前端页面）
+- 使用Vue.js + ElementUI做后台管理系统前端架构（Vue较为麻烦，暂使用LayUI做前端页面）
 - 采用前后端分离设计
 
 #### 功能架构设计：
