@@ -28,6 +28,16 @@ public class AccountController extends BaseController {
 	@Autowired
 	private AccountServiceImpl accountService;
 	
+	/**
+	 * 根据条件分页查询用户信息
+	 * @author JasonFu
+	 * @createTime 2018年9月19日 下午8:21:17
+	 * @param request
+	 * @param response
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
 	@RequestMapping("/getPageByExample")
 	@ResponseBody
 	public Object getAccount(HttpServletRequest request, HttpServletResponse response,
