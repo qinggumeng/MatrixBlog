@@ -1,6 +1,9 @@
-layui.use('table', function () {
+layui.use(['table', 'laypage', 'layer'], function () {
     var table = layui.table;
     var element = layui.element;
+    var layer = layui.layer;
+    var laydate = layui.laydate;
+    var laypage = layui.laypage;
     layui.$.support.cors = true;
     table.render({
         elem: '#data-table'
@@ -13,7 +16,8 @@ layui.use('table', function () {
             , limitName: 'rows'
         }
         , cols: [[
-            { field: 'id', title: 'ID', width: '50' }
+            { type: 'checkbox', fixed: 'left' }
+            , { field: 'id', title: 'ID', width: '50' }
             , { field: 'username', title: '用户名', width: '100' }
             , { field: 'nickname', title: '昵称', width: '100' }
             , { field: 'roleid', title: '权限', width: '100' }
@@ -115,5 +119,31 @@ layui.use('table', function () {
             }
             , { field: 'avatar', title: '头像', width: '100' }
         ]]
+    });
+
+    table.on('toolbar(data-table)', function (obj) {
+        var checkStatus = table.checkStatus(obj.config.id)
+        var data = checkStatus.data;
+        switch (obj.event) {
+            case 'add':
+                layer.msg('添加');
+                break;
+            case 'update':
+                if (data.length === 0) {
+                    layer.msg('请选择一行');
+                } else if (data.length > 1) {
+                    layer.msg('只能同时编辑一个');
+                } else {
+                    layer.alert('编辑 [id]：' + checkStatus.data[0].id);
+                }
+                break;
+            case 'delete':
+                if (data.length === 0) {
+                    layer.msg('请选择一行');
+                } else {
+                    layer.msg('删除' + checkStatus.data[0].id);
+                }
+                break;
+        };
     });
 });
