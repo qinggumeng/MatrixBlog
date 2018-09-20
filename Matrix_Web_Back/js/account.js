@@ -126,7 +126,11 @@ layui.use(['table', 'laypage', 'layer'], function () {
         var data = checkStatus.data;
         switch (obj.event) {
             case 'add':
-                layer.msg('添加');
+                layer.open({
+                    title: '新增用户'
+                    ,content: "<iframe src='edit.html' width='100%' height='100%' scrolling='no' frameborder='0'></iframe>"
+                    ,area: ['100%','100%']
+                });
                 break;
             case 'update':
                 if (data.length === 0) {
@@ -147,3 +151,15 @@ layui.use(['table', 'laypage', 'layer'], function () {
         };
     });
 });
+
+function addAccount(params) {
+    
+}
+
+function editAccount(params) {
+    
+}
+
+function delAccount(params) {
+    
+}
