@@ -1,9 +1,6 @@
 layui.use(['table', 'laypage', 'layer'], function () {
     var table = layui.table;
-    var element = layui.element;
     var layer = layui.layer;
-    var laydate = layui.laydate;
-    var laypage = layui.laypage;
     layui.$.support.cors = true;
     table.render({
         elem: '#data-table'

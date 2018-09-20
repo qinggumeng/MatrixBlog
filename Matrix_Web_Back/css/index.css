@@ -1,18 +1,8 @@
-.layui-footer {
-    text-align: center;
+.layui-body, .layui-tab, .layui-tab-content {
+    margin: 0;
+    padding: 0;
 }
 
-.layui-body {
-    margin-top: 4px;
-    overflow-y: hidden;
-}
-
-#main_body {
-    margin: 0px;
-    padding: 0px;
-}
-
-.layui-breadcrumb {
-    font-size: 16px;
-    margin-left: 20px;
+.layui-tab {
+    height: 100%;
 }

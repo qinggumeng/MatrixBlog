@@ -16,8 +16,8 @@ $(function () {
  * 动态设置样式
  */
 function setStyle(){
-    var maxIframeHeight = $("#layui-body").height() - 10;
-    $("#main_body").attr("height", maxIframeHeight);
+    var maxBodyHeight = $("#layui-right").height();
+    $("#layui-body").attr("height", maxBodyHeight);
 }
 /**
  * 刷新右上角实时日期时间
@@ -47,6 +47,4 @@ function padDate(pad) {
  */
 function toAccountManager() {
     $("#main_body").attr("src","page/account/list.html");
-    $("#nav-breadcrumb").html("<a href=''>首页</a><a href=''>用户管理</a><a><cite>用户维护</cite></a>");
-    element.render('breadcrumb', 'main-breadcrumb');
 }
