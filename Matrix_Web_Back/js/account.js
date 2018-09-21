@@ -1,11 +1,15 @@
+$(function () {
+    setAttr();
+});
+
 layui.use(['table', 'laypage', 'layer'], function () {
     var table = layui.table;
     var layer = layui.layer;
     layui.$.support.cors = true;
     table.render({
         elem: '#data-table'
-        , height: 'full-20'
         , url: 'http://localhost:10060/back/account/getPageByExample'
+        , height: 500
         , page: true
         , toolbar: 'default'
         , request: {
@@ -135,7 +139,11 @@ layui.use(['table', 'laypage', 'layer'], function () {
                 } else if (data.length > 1) {
                     layer.msg('只能同时编辑一个');
                 } else {
-                    layer.alert('编辑 [id]：' + checkStatus.data[0].id);
+                    layer.open({
+                        title: '修改用户'
+                        ,content: "<iframe src='edit.html' width='100%' height='100%' scrolling='no' frameborder='0'></iframe>"
+                        ,area: ['100%','100%']
+                    });
                 }
                 break;
             case 'delete':
@@ -148,6 +156,10 @@ layui.use(['table', 'laypage', 'layer'], function () {
         };
     });
 });
+
+function setAttr() {
+    $('html').css('height', parseInt(parent.$('.layui-tab-item').css('height')));
+}
 
 function addAccount(params) {
     

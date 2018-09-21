@@ -16,8 +16,10 @@ $(function () {
  * 动态设置样式
  */
 function setStyle(){
-    var maxBodyHeight = $("#layui-right").height();
-    $("#layui-body").attr("height", maxBodyHeight);
+    $("#layui-body").css("height", $("#left-nav").css("height"));
+    var height = parseInt($('#layui-body').css('height')) - parseInt($('.layui-tab-title').css('height'));
+    $('.layui-tab-content').css('height', height);
+    $('.layui-tab-item').css('height', height);
 }
 /**
  * 刷新右上角实时日期时间
