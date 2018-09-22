@@ -38,3 +38,5 @@ Wechat：  FX3A87
 Email： jaosnfu516@outlook.com
 
 Profile：www.jasonfx.com
+
+（考虑到方便你们运行，项目中有些私密信息就不隐藏了，开源不易，望尊重作者）
