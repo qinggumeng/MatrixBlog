@@ -2,10 +2,10 @@ spring:
   application:
     name: matrix-back-account
   datasource:
-    url: jdbc:mysql://120.78.208.3:3306/matrix?useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/matrix?useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: jasonFX3A87WLQ
+    password: root
     
     type: com.alibaba.druid.pool.DruidDataSource
     filters: stat
