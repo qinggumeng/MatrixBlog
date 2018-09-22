@@ -9,7 +9,7 @@ layui.use(['table', 'laypage', 'layer'], function () {
     table.render({
         elem: '#data-table'
         , url: 'http://localhost:10060/back/account/getPageByExample'
-        , height: 500
+        , height: 'full-0'
         , page: true
         , toolbar: 'default'
         , request: {

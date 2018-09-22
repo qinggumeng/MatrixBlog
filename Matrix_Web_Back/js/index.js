@@ -15,9 +15,9 @@ $(function () {
 /**
  * 动态设置样式
  */
-function setStyle(){
+function setStyle() {
     $("#layui-body").css("height", $("#left-nav").css("height"));
-    var height = parseInt($('#layui-body').css('height')) - parseInt($('.layui-tab-title').css('height'));
+    var height = parseInt($('#layui-body').css('height')) - parseInt($('.layui-tab-title').css('height')) - 1;
     $('.layui-tab-content').css('height', height);
     $('.layui-tab-item').css('height', height);
 }
@@ -44,9 +44,22 @@ function padDate(pad) {
     return pad;
 }
 /**
+ * 浏览器窗口大小改变时更新样式
+ */
+window.onresize = function () {
+    setStyle();
+}
+/**
  * 跳转到用户维护界面
- * 设置iframe路径并更改面包屑导航
+ * 新增tab标签页
  */
 function toAccountManager() {
-    $("#main_body").attr("src","page/account/list.html");
+    element.tabDelete('menu-tab', 'tab-account-manager');
+    element.tabAdd('menu-tab', {
+        title: '用户维护'
+        , content: "<iframe src='page/account/list.html' name='main_body' id='main_body' width='100%'' height='100%'' scrolling='no' frameborder='0'></iframe>"
+        , id: 'tab-account-manager'
+    });
+    setStyle();
+    element.tabChange('menu-tab', 'tab-account-manager');
 }

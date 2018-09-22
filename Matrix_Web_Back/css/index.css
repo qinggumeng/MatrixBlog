@@ -6,3 +6,12 @@
 .layui-tab {
     height: 100%;
 }
+
+#layui-body::-webkit-scrollbar {
+    display: none;
+
+}
+
+#layui-body {
+    overflow: hidden;
+}
