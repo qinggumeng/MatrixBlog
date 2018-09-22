@@ -8,8 +8,8 @@ spring:
         git:
           uri: https://github.com/MentalKali/MatrixBlog
           search-paths: /**
-          username: MentalKali
-          password: jasonFX3A87WLQ
+          username: GitHub UserName
+          password: GitHub Password
 
 eureka:
   client:
