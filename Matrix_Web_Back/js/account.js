@@ -1,5 +1,5 @@
 $(function () {
-    setAttr();
+    setStyle();
 });
 
 layui.use(['table', 'laypage', 'layer'], function () {
@@ -150,25 +150,15 @@ layui.use(['table', 'laypage', 'layer'], function () {
                 if (data.length === 0) {
                     layer.msg('请选择一行');
                 } else {
-                    layer.msg('删除' + checkStatus.data[0].id);
+                    if(confirm('确定要删除吗？')){
+                        layer.msg('删除' + checkStatus.data[0].id);
+                    }
                 }
                 break;
         };
     });
 });
 
-function setAttr() {
+function setStyle() {
     $('html').css('height', parseInt(parent.$('.layui-tab-item').css('height')));
-}
-
-function addAccount(params) {
-    
-}
-
-function editAccount(params) {
-    
-}
-
-function delAccount(params) {
-    
 }
