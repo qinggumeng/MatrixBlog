@@ -2,9 +2,10 @@ $(function () {
     setStyle();
 });
 
-layui.use(['table', 'laypage', 'layer'], function () {
+layui.use(['table', 'layer', 'util'], function () {
     var table = layui.table;
     var layer = layui.layer;
+    var util = layui.util;
     layui.$.support.cors = true;
     table.render({
         elem: '#data-table'
@@ -40,12 +41,7 @@ layui.use(['table', 'laypage', 'layer'], function () {
             , { field: 'zipcode', title: '邮政编码', width: '100' }
             , {
                 field: 'birthday', title: '生日', width: '140', templet: function (data) {
-                    var date = new Date(data.birthday);
-                    var Y = date.getFullYear() + '年';
-                    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '月';
-                    var D = date.getDate() + '日';
-                    var dateStr = Y + M + D;
-                    return dateStr;
+                    return util.toDateString(data.birthday, 'yyyy年MM月dd日');
                 }
             }
             , {
@@ -80,28 +76,12 @@ layui.use(['table', 'laypage', 'layer'], function () {
             }
             , {
                 field: 'createtime', title: '创建时间', width: '150', templet: function (data) {
-                    var date = new Date(data.createtime);
-                    var Y = date.getFullYear() + '年';
-                    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '月';
-                    var D = date.getDate() + '日';
-                    var h = date.getHours() + '时';
-                    var m = date.getMinutes() + '分';
-                    var s = date.getSeconds() + '秒';
-                    var dateStr = Y + M + D + h + m + s;
-                    return dateStr;
+                    return util.toDateString(data.createtime, 'yyyy年MM月dd日 HH时mm分ss秒');
                 }
             }
             , {
                 field: 'logged', title: '上次登录', width: '150', templet: function (data) {
-                    var date = new Date(data.logged);
-                    var Y = date.getFullYear() + '年';
-                    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '月';
-                    var D = date.getDate() + '日';
-                    var h = date.getHours() + '时';
-                    var m = date.getMinutes() + '分';
-                    var s = date.getSeconds() + '秒';
-                    var dateStr = Y + M + D + h + m + s;
-                    return dateStr;
+                    return util.toDateString(data.logged, 'yyyy年MM月dd日 HH时mm分ss秒');
                 }
             }
             , {
@@ -123,14 +103,14 @@ layui.use(['table', 'laypage', 'layer'], function () {
     });
 
     table.on('toolbar(data-table)', function (obj) {
-        var checkStatus = table.checkStatus(obj.config.id)
+        var checkStatus = table.checkStatus(obj.config.id);
         var data = checkStatus.data;
         switch (obj.event) {
             case 'add':
                 layer.open({
                     title: '新增用户'
-                    ,content: "<iframe src='edit.html' width='100%' height='100%' scrolling='no' frameborder='0'></iframe>"
-                    ,area: ['100%','100%']
+                    , content: "<iframe src='edit.html' width='100%' height='100%' scrolling='no' frameborder='0'></iframe>"
+                    , area: ['100%', '100%']
                 });
                 break;
             case 'update':
@@ -141,8 +121,8 @@ layui.use(['table', 'laypage', 'layer'], function () {
                 } else {
                     layer.open({
                         title: '修改用户'
-                        ,content: "<iframe src='edit.html' width='100%' height='100%' scrolling='no' frameborder='0'></iframe>"
-                        ,area: ['100%','100%']
+                        , content: "<iframe src='edit.html' width='100%' height='100%' scrolling='no' frameborder='0'></iframe>"
+                        , area: ['100%', '100%']
                     });
                 }
                 break;
@@ -150,9 +130,22 @@ layui.use(['table', 'laypage', 'layer'], function () {
                 if (data.length === 0) {
                     layer.msg('请选择一行');
                 } else {
-                    if(confirm('确定要删除吗？')){
-                        layer.msg('删除' + checkStatus.data[0].id);
-                    }
+                    layer.confirm('确定要删除吗？', { icon: 3, title: '提示' }, function (index) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "",
+                            async: false,
+                            cache: false,
+                            dataType: 'json',
+                            data: {
+                                id: checkStatus.data[0].id
+                            },
+                            success: function (response) {
+                                layer.msg('删除成功！');
+                            }
+                        });
+                        layer.close(index);
+                    });
                 }
                 break;
         };
