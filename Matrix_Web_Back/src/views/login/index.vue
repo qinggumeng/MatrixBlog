@@ -24,20 +24,20 @@
       doLogin() {
         var username = this.input_username;
         var password = this.input_password;
-        $.ajax({
-          type: 'POST',
-          url: "",
-          async: false,
-          cache: false,
-          dataType: 'json',
-          data: {
-            username: username,
-            password: password
-          },
-          success: function(response) {
+        // $.ajax({
+        //   type: 'POST',
+        //   url: "",
+        //   async: false,
+        //   cache: false,
+        //   dataType: 'json',
+        //   data: {
+        //     username: username,
+        //     password: password
+        //   },
+        //   success: function(response) {
             
-          }
-        });
+        //   }
+        // });
       }
     }
   };
