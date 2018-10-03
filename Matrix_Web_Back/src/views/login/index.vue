@@ -12,53 +12,53 @@
 </template>
 
 <script>
-  export default {
-    name: "login",
-    data() {
-      return {
-        input_username: "",
-        input_password: ""
-      };
-    },
-    methods: {
-      doLogin() {
-        var username = this.input_username;
-        var password = this.input_password;
-        // $.ajax({
-        //   type: 'POST',
-        //   url: "",
-        //   async: false,
-        //   cache: false,
-        //   dataType: 'json',
-        //   data: {
-        //     username: username,
-        //     password: password
-        //   },
-        //   success: function(response) {
-            
-        //   }
-        // });
-      }
+export default {
+  name: "login",
+  data() {
+    return {
+      input_username: "",
+      input_password: ""
+    };
+  },
+  methods: {
+    doLogin() {
+      var username = this.input_username;
+      var password = this.input_password;
+      $.ajax({
+        type: "POST",
+        url: "https://www.baidu.com",
+        async: false,
+        cache: false,
+        dataType: "text",
+        data: {
+          username: username,
+          password: password
+        },
+        success: function(response) {
+          alert("登陆成功");
+        }
+      });
     }
-  };
+  }
+};
 </script>
 
 <style>
-  input,
-  button {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-  }
-  
-  #login-form {
-    text-align: center;
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    top: 50%;
-    left: 50%;
-    margin-top: -200px;
-    margin-left: -150px;
-  }
+input,
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#login-form {
+  text-align: center;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -150px;
+}
 </style>
